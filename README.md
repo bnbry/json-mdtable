@@ -88,18 +88,18 @@ Flattens JSON and outputs half a markdown table for documenting JSON mapping tra
 
 ## Output Markdown Table
 
-| Source Field                         | Target Field |
-| ------------------------------------ | ------------ |
-| library.books[].title                | TODO         |
-| library.books[].authors[]            | TODO         |
-| library.books[].isbn                 | TODO         |
-| library.books[].price                | TODO         |
-| library.books[].copies               | TODO         |
-| library.loans[].customer             | TODO         |
-| library.loans[].isbn                 | TODO         |
-| library.loans[].return               | TODO         |
-| library.customers[].id               | TODO         |
-| library.customers[].name             | TODO         |
-| library.customers[].address.street   | TODO         |
-| library.customers[].address.city     | TODO         |
-| library.customers[].address.postcode | TODO         |
+| X API Field (Destination)               | Y API Field (Source)  | Notes |
+| --------------------------------------- | --------------------- | ----- |
+| `library.books[i].title`                | TODO: Map from source | n/a   |
+| `library.books[i].authors[i]`           | TODO: Map from source | n/a   |
+| `library.books[i].isbn`                 | TODO: Map from source | n/a   |
+| `library.books[i].price`                | TODO: Map from source | n/a   |
+| `library.books[i].copies`               | TODO: Map from source | n/a   |
+| `library.loans[i].customer`             | TODO: Map from source | n/a   |
+| `library.loans[i].isbn`                 | TODO: Map from source | n/a   |
+| `library.loans[i].return`               | TODO: Map from source | n/a   |
+| `library.customers[i].id`               | TODO: Map from source | n/a   |
+| `library.customers[i].name`             | TODO: Map from source | n/a   |
+| `library.customers[i].address.street`   | TODO: Map from source | n/a   |
+| `library.customers[i].address.city`     | TODO: Map from source | n/a   |
+| `library.customers[i].address.postcode` | TODO: Map from source | n/a   |

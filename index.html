@@ -72,7 +72,7 @@
   </head>
   <body>
     <header>
-      <h1>JSON-MDTable</h1>
+      <h1>JSON Mark(down) Tabler</h1>
     </header>
     <main>
       <section class="pane">
@@ -88,9 +88,9 @@ Replace all text in this textarea with your JSON
         <textarea id="target-editor" class="input-editor">
 It will get flattened into dot syntax here in the left column of the markdown table so that you can map to another structure
 
-| Output | Markdown |
-| ------ | -------- |
-| input  | TODO |
+| Output | Markdown | Notes |
+| ------ | -------- | ----- |
+| `input`  | TODO: map | n/a |
         </textarea>
       </section>
     </main>
@@ -123,7 +123,7 @@ It will get flattened into dot syntax here in the left column of the markdown ta
             result[prop] = current;
           } else if (Array.isArray(current)) {
             for(var i = 0; i < 1; i++) {
-              parse(current[i], prop ? prop + "[]" : "[]");
+              parse(current[i], prop ? prop + "[i]" : "[i]");
             }
 
             if (current.length == 0) {
@@ -150,12 +150,12 @@ It will get flattened into dot syntax here in the left column of the markdown ta
 
       const formatMarkdown = (list) => {
         const formattedList = list.map((item, index) => {
-          return `| ${item} | TODO |`;
+          return `| \`${item}\` | TODO: Map from source | n/a |`;
         })
 
         const modifiedList = [
-          "| Source Field | Target Field |",
-          "| ------------ | ------------ |",
+          "| X API Field (Destination) | Y API Field (Source) | Notes |",
+          "| ------------------------- | -------------------- | ----- |",
           ...formattedList,
         ]
 
