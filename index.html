@@ -98,31 +98,27 @@ It will get flattened into dot syntax here in the left column of the markdown ta
       <div class="button">Transform</div>
     </footer>
     <script>
-      window.addEventListener(
-        "load",
-        () => { },
-        false
-      );
-
       document.querySelector(".button").addEventListener("click", (event) => {
         event.preventDefault();
         const sourceElement = document.querySelector("#source-editor");
         const targetElement = document.querySelector("#target-editor");
+
         const jsonSource = JSON.parse(sourceElement.value);
         const flatSource = flattenKeys(jsonSource);
         const flatKeys = Object.keys(flatSource);
         const markdownTable = formatMarkdown(flatKeys);
+
         targetElement.value = markdownTable;
       });
 
       const flattenKeys = (data) => {
-        var result = {};
+        let result = {};
 
         function parse(current, prop) {
           if (Object(current) !== current) {
             result[prop] = current;
           } else if (Array.isArray(current)) {
-            for(var i = 0; i < 1; i++) {
+            for(let i = 0; i < 1; i++) {
               parse(current[i], prop ? prop + "[i]" : "[i]");
             }
 
